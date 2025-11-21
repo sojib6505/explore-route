@@ -8,6 +8,7 @@ import Post from './Components/Post/Post.jsx'
 import About from './Components/About/About.jsx'
 import Contact from './Components/Contact/Contact.jsx'
 import PostDetails from './Components/PostDetails/PostDetails.jsx'
+import Notfound from './Components/Notfound/Notfound.jsx'
 const router = createBrowserRouter([
     {
       path:'/',
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
           loader:({params}) =>
             fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`),
           Component: PostDetails
+        },
+        {
+          path:'*',
+          Component: Notfound
         }
       ]
     },
